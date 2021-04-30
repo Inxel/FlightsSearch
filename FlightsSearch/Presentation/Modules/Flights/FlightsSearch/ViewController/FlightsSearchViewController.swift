@@ -8,6 +8,19 @@
 import UIKit
 import SnapKit
 
+// MARK: - Constants
+
+extension FlightsSearchViewController {
+    
+    private enum Constants {
+        static let nothingFoundDescription: String = "Мы не знаем такого места :("
+        static let emptySearchBarDescription: String = "Ткните в глобус и введите название попавшегося места или аэропорта, чтобы начать поиск :)"
+    }
+    
+}
+
+// MARK: - View Controller
+
 final class FlightsSearchViewController: NiblessViewController {
     
     // MARK: - UI Elements
@@ -21,7 +34,7 @@ final class FlightsSearchViewController: NiblessViewController {
         return tableView
     }()
     private var backgroundView: UIView = UIView()
-    private var emptySearchDescriptionLabel: UILabel = UILabel()
+    private var descriptionLabel: UILabel = UILabel()
     private var searchBar: UISearchBar = UISearchBar()
     
     // MARK: - Properties
@@ -67,15 +80,20 @@ extension FlightsSearchViewController {
     
     private func bindViewModel() {
         viewModel.itemsDidUpdate = { [weak self] itemsIsEmpty in
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.tableView.reloadData()
             
             UIView.animate(withDuration: 0.3) {
                 if itemsIsEmpty {
-                    self?.tableView.alpha = 0
-                    self?.backgroundView.alpha = 1
+                    self.tableView.alpha = 0
+                    self.backgroundView.alpha = 1
+                    self.descriptionLabel.text = self.searchBar.text.isNotBlank
+                        ? Constants.nothingFoundDescription
+                        : Constants.emptySearchBarDescription
                 } else {
-                    self?.tableView.alpha = 1
-                    self?.backgroundView.alpha = 0
+                    self.tableView.alpha = 1
+                    self.backgroundView.alpha = 0
+                    self.descriptionLabel.text = nil
                 }
             }
         }
@@ -151,21 +169,21 @@ extension FlightsSearchViewController {
     private func configureBackgroundView() {
         backgroundView.alpha = 1
         backgroundView.backgroundColor = .white
-        backgroundView.addSubview(emptySearchDescriptionLabel)
-        configureEmptySearchDescriptionLabel()
+        backgroundView.addSubview(descriptionLabel)
+        configureDescriptionLabel()
         backgroundView.snp.makeConstraints { make in
             make.leading.top.trailing.bottom.equalToSuperview()
         }
         backgroundView.addGestureRecognizer(tapRecognizer)
     }
     
-    private func configureEmptySearchDescriptionLabel() {
-        emptySearchDescriptionLabel.text = "Ткните в глобус и введите название попавшегося места или аэропорта, чтобы начать поиск :)"
-        emptySearchDescriptionLabel.textAlignment = .center
-        emptySearchDescriptionLabel.numberOfLines = 0
-        emptySearchDescriptionLabel.textColor = .black
-        emptySearchDescriptionLabel.font = .boldSystemFont(ofSize: 20)
-        emptySearchDescriptionLabel.snp.makeConstraints { make in
+    private func configureDescriptionLabel() {
+        descriptionLabel.text = Constants.emptySearchBarDescription
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.textColor = .black
+        descriptionLabel.font = .boldSystemFont(ofSize: 20)
+        descriptionLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)

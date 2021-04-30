@@ -77,7 +77,9 @@ extension APIClient {
                         }
                         
                     default:
-                        self?.decodeError(from: data, httpCode: httpResponse.statusCode, completion: completion)
+                        destinationQueue.addOperation {
+                            completion(.failure(.somethingWentWrong))
+                        }
                     }
                     /* -------------------------------------------------------------------- */
                 }.resume()
@@ -100,7 +102,11 @@ extension APIClient {
 extension APIClient {
     
     private func makeURL(for urlString: String) throws -> URL {
-        guard let url = URL(string: urlString) else { throw APIError.invalidURL }
+        guard
+            let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: encodedUrlString)
+        else { throw APIError.invalidURL }
+        
         return url
     }
     
@@ -128,21 +134,6 @@ extension APIClient {
         guard let body = try? JSONEncoder().encode(apiRequest) else { throw APIError.invalidData }
         urlRequest.httpBody = body
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    }
-    
-    private func decodeError<T: Decodable>(
-        from data: Data?,
-        destinationQueue: OperationQueue = .main,
-        httpCode: Int,
-        completion: @escaping ResultHandler<T>
-    ) {
-//        destinationQueue.addOperation {
-//            if let data = data, let apiError = try? JSONDecoder().decode(APIError.self, from: data) {
-//                completion(.failure(apiError.withHttpCode(httpCode)))
-//            } else {
-//                completion(.failure(APIError.unknown.withHttpCode(httpCode)))
-//            }
-//        }
     }
     
     private func decodeResponse<T: Decodable>(
