@@ -7,15 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2237DB8526398E700077AE4E /* FlightsSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB8426398E700077AE4E /* FlightsSearchViewModel.swift */; };
+		2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB88263990C70077AE4E /* UITableView+Registration.swift */; };
+		2237DB8E263991750077AE4E /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB8D263991750077AE4E /* ReusableView.swift */; };
+		2237DB92263993F70077AE4E /* UIViewController+SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB91263993F70077AE4E /* UIViewController+SafeArea.swift */; };
+		2237DB9726399F160077AE4E /* AirportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB9626399F160077AE4E /* AirportCell.swift */; };
+		2237DB9C2639A03C0077AE4E /* PlacePM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB9B2639A03C0077AE4E /* PlacePM.swift */; };
+		2237DBA42639A4E80077AE4E /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DBA32639A4E80077AE4E /* LocationDTO.swift */; };
+		2237DBA92639A5CD0077AE4E /* LocationPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DBA82639A5CD0077AE4E /* LocationPM.swift */; };
+		22580DDC263BDD0300B486E9 /* FligthsSearchProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580DDB263BDD0300B486E9 /* FligthsSearchProviding.swift */; };
+		22580DE2263BDED600B486E9 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580DE1263BDED600B486E9 /* PlaceModel.swift */; };
+		22580DE6263BDEE100B486E9 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580DE5263BDEE100B486E9 /* LocationModel.swift */; };
+		22580DF7263BE27C00B486E9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580DF6263BE27C00B486E9 /* APIError.swift */; };
+		22580DFA263BEC6C00B486E9 /* NiblessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580DF9263BEC6C00B486E9 /* NiblessTableViewCell.swift */; };
+		22580E01263BF17300B486E9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E00263BF17300B486E9 /* AppCoordinator.swift */; };
+		22580E08263BF1BC00B486E9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E07263BF1BC00B486E9 /* Coordinator.swift */; };
+		22580E0C263BF2A700B486E9 /* FlightsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E0B263BF2A700B486E9 /* FlightsCoordinator.swift */; };
+		22580E0F263BF4D700B486E9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E0E263BF4D700B486E9 /* BaseViewModel.swift */; };
 		22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE554A26388D6D004D36A3 /* AppDelegate.swift */; };
 		22FE555226388D6D004D36A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555026388D6D004D36A3 /* Main.storyboard */; };
 		22FE555426388D6F004D36A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555326388D6F004D36A3 /* Assets.xcassets */; };
 		22FE555726388D6F004D36A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555526388D6F004D36A3 /* LaunchScreen.storyboard */; };
 		22FE556826389138004D36A3 /* KeyboardShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE556726389138004D36A3 /* KeyboardShowing.swift */; };
 		22FE557C263897CA004D36A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22FE557B263897CA004D36A3 /* SnapKit */; };
+		22FE55C3263952B5004D36A3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55C2263952B5004D36A3 /* API.swift */; };
+		22FE55CB263962BD004D36A3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55CA263962BD004D36A3 /* APIClient.swift */; };
+		22FE55CF263962EF004D36A3 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55CE263962EF004D36A3 /* APIRequest.swift */; };
+		22FE55D42639630A004D36A3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55D32639630A004D36A3 /* HTTPMethod.swift */; };
+		22FE55D82639635C004D36A3 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55D72639635C004D36A3 /* APIClientProtocol.swift */; };
+		22FE55DC2639637C004D36A3 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55DB2639637C004D36A3 /* TypeAliases.swift */; };
+		22FE55E4263963F4004D36A3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55E3263963F4004D36A3 /* Networking.swift */; };
+		22FE55E826396C22004D36A3 /* FligthsSearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55E726396C22004D36A3 /* FligthsSearchProvider.swift */; };
+		22FE55ED26396E08004D36A3 /* PlaceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55EC26396E08004D36A3 /* PlaceDTO.swift */; };
+		22FE55F426396F91004D36A3 /* FligthsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55F326396F91004D36A3 /* FligthsSearchRequest.swift */; };
+		22FE55F8263976B7004D36A3 /* FlightsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55F7263976B7004D36A3 /* FlightsSearchViewController.swift */; };
+		22FE55FB263976E9004D36A3 /* AirplaneAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55FA263976E9004D36A3 /* AirplaneAnimationViewController.swift */; };
+		22FE560026397796004D36A3 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE55FF26397796004D36A3 /* NiblessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2237DB8426398E700077AE4E /* FlightsSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsSearchViewModel.swift; sourceTree = "<group>"; };
+		2237DB88263990C70077AE4E /* UITableView+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registration.swift"; sourceTree = "<group>"; };
+		2237DB8D263991750077AE4E /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		2237DB91263993F70077AE4E /* UIViewController+SafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeArea.swift"; sourceTree = "<group>"; };
+		2237DB9626399F160077AE4E /* AirportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCell.swift; sourceTree = "<group>"; };
+		2237DB9B2639A03C0077AE4E /* PlacePM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePM.swift; sourceTree = "<group>"; };
+		2237DBA32639A4E80077AE4E /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
+		2237DBA82639A5CD0077AE4E /* LocationPM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPM.swift; sourceTree = "<group>"; };
+		22580DDB263BDD0300B486E9 /* FligthsSearchProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FligthsSearchProviding.swift; sourceTree = "<group>"; };
+		22580DE1263BDED600B486E9 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		22580DE5263BDEE100B486E9 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		22580DF6263BE27C00B486E9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		22580DF9263BEC6C00B486E9 /* NiblessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessTableViewCell.swift; sourceTree = "<group>"; };
+		22580E00263BF17300B486E9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		22580E07263BF1BC00B486E9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		22580E0B263BF2A700B486E9 /* FlightsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsCoordinator.swift; sourceTree = "<group>"; };
+		22580E0E263BF4D700B486E9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		22FE554726388D6D004D36A3 /* FlightsSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightsSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FE554A26388D6D004D36A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22FE555126388D6D004D36A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -23,6 +70,19 @@
 		22FE555626388D6F004D36A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22FE555826388D6F004D36A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22FE556726389138004D36A3 /* KeyboardShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShowing.swift; sourceTree = "<group>"; };
+		22FE55C2263952B5004D36A3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		22FE55CA263962BD004D36A3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		22FE55CE263962EF004D36A3 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		22FE55D32639630A004D36A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		22FE55D72639635C004D36A3 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		22FE55DB2639637C004D36A3 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		22FE55E3263963F4004D36A3 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		22FE55E726396C22004D36A3 /* FligthsSearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FligthsSearchProvider.swift; sourceTree = "<group>"; };
+		22FE55EC26396E08004D36A3 /* PlaceDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDTO.swift; sourceTree = "<group>"; };
+		22FE55F326396F91004D36A3 /* FligthsSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FligthsSearchRequest.swift; sourceTree = "<group>"; };
+		22FE55F7263976B7004D36A3 /* FlightsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsSearchViewController.swift; sourceTree = "<group>"; };
+		22FE55FA263976E9004D36A3 /* AirplaneAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneAnimationViewController.swift; sourceTree = "<group>"; };
+		22FE55FF26397796004D36A3 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +97,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2237DB87263990AF0077AE4E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2237DB88263990C70077AE4E /* UITableView+Registration.swift */,
+				2237DB91263993F70077AE4E /* UIViewController+SafeArea.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2237DB94263994410077AE4E /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2237DB9526399EF60077AE4E /* AirportCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		2237DB9526399EF60077AE4E /* AirportCell */ = {
+			isa = PBXGroup;
+			children = (
+				2237DB9626399F160077AE4E /* AirportCell.swift */,
+			);
+			path = AirportCell;
+			sourceTree = "<group>";
+		};
+		2237DB9A2639A0210077AE4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2237DB9B2639A03C0077AE4E /* PlacePM.swift */,
+				2237DBA82639A5CD0077AE4E /* LocationPM.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22580DD8263BD9A700B486E9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22580DDB263BDD0300B486E9 /* FligthsSearchProviding.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		22580DE0263BDECB00B486E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22580DE1263BDED600B486E9 /* PlaceModel.swift */,
+				22580DE5263BDEE100B486E9 /* LocationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22580DF4263BE13900B486E9 /* FlightsSearchRequests */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55F326396F91004D36A3 /* FligthsSearchRequest.swift */,
+			);
+			path = FlightsSearchRequests;
+			sourceTree = "<group>";
+		};
+		22580DFD263BF13D00B486E9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				22580E06263BF1AD00B486E9 /* Protocols */,
+				22580E00263BF17300B486E9 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		22580DFE263BF14C00B486E9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2237DB94263994410077AE4E /* TableViewCells */,
+				22FE55F7263976B7004D36A3 /* FlightsSearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		22580DFF263BF15800B486E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2237DB8426398E700077AE4E /* FlightsSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22580E04263BF19B00B486E9 /* Flights */ = {
+			isa = PBXGroup;
+			children = (
+				22580E05263BF1A600B486E9 /* Coordinator */,
+				22FE556E26389383004D36A3 /* AirplaneAnimation */,
+				22FE556D26389377004D36A3 /* FlightsSearch */,
+			);
+			path = Flights;
+			sourceTree = "<group>";
+		};
+		22580E05263BF1A600B486E9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				22580E0B263BF2A700B486E9 /* FlightsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		22580E06263BF1AD00B486E9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22580E07263BF1BC00B486E9 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		22FE553E26388D6D004D36A3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +227,7 @@
 		22FE554926388D6D004D36A3 /* FlightsSearch */ = {
 			isa = PBXGroup;
 			children = (
+				22FE55DA26396374004D36A3 /* Common */,
 				22FE556526389120004D36A3 /* Presentation */,
 				22FE55642638910B004D36A3 /* Domain */,
 				22FE556326389104004D36A3 /* Data */,
@@ -71,6 +243,8 @@
 		22FE556326389104004D36A3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				22FE55E62639641A004D36A3 /* Providers */,
+				22FE55EB26396D1B004D36A3 /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -78,6 +252,8 @@
 		22FE55642638910B004D36A3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				22580DE0263BDECB00B486E9 /* Models */,
+				22580DD8263BD9A700B486E9 /* Protocols */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -85,6 +261,10 @@
 		22FE556526389120004D36A3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				22580DFD263BF13D00B486E9 /* Coordinator */,
+				2237DB9A2639A0210077AE4E /* Models */,
+				2237DB87263990AF0077AE4E /* Extensions */,
+				22FE55FE26397783004D36A3 /* Base Classes */,
 				22FE556C26389370004D36A3 /* Modules */,
 				22FE55662638912C004D36A3 /* Protocols */,
 			);
@@ -95,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				22FE556726389138004D36A3 /* KeyboardShowing.swift */,
+				2237DB8D263991750077AE4E /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -102,8 +283,7 @@
 		22FE556C26389370004D36A3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				22FE556E26389383004D36A3 /* FlightsList */,
-				22FE556D26389377004D36A3 /* FlightsSearch */,
+				22580E04263BF19B00B486E9 /* Flights */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -111,15 +291,93 @@
 		22FE556D26389377004D36A3 /* FlightsSearch */ = {
 			isa = PBXGroup;
 			children = (
+				22580DFF263BF15800B486E9 /* ViewModel */,
+				22580DFE263BF14C00B486E9 /* ViewController */,
 			);
 			path = FlightsSearch;
 			sourceTree = "<group>";
 		};
-		22FE556E26389383004D36A3 /* FlightsList */ = {
+		22FE556E26389383004D36A3 /* AirplaneAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				22FE55FA263976E9004D36A3 /* AirplaneAnimationViewController.swift */,
 			);
-			path = FlightsList;
+			path = AirplaneAnimation;
+			sourceTree = "<group>";
+		};
+		22FE55C1263951F5004D36A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55F226396F77004D36A3 /* Reuqests */,
+				22FE55D2263962FC004D36A3 /* Models */,
+				22FE55CD263962C1004D36A3 /* Protocols */,
+				22FE55D32639630A004D36A3 /* HTTPMethod.swift */,
+				22FE55C2263952B5004D36A3 /* API.swift */,
+				22FE55CA263962BD004D36A3 /* APIClient.swift */,
+				22580DF6263BE27C00B486E9 /* APIError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		22FE55CD263962C1004D36A3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55CE263962EF004D36A3 /* APIRequest.swift */,
+				22FE55D72639635C004D36A3 /* APIClientProtocol.swift */,
+				22FE55E3263963F4004D36A3 /* Networking.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		22FE55D2263962FC004D36A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55EC26396E08004D36A3 /* PlaceDTO.swift */,
+				2237DBA32639A4E80077AE4E /* LocationDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22FE55DA26396374004D36A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55DB2639637C004D36A3 /* TypeAliases.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		22FE55E62639641A004D36A3 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55E726396C22004D36A3 /* FligthsSearchProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		22FE55EB26396D1B004D36A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55C1263951F5004D36A3 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		22FE55F226396F77004D36A3 /* Reuqests */ = {
+			isa = PBXGroup;
+			children = (
+				22580DF4263BE13900B486E9 /* FlightsSearchRequests */,
+			);
+			path = Reuqests;
+			sourceTree = "<group>";
+		};
+		22FE55FE26397783004D36A3 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55FF26397796004D36A3 /* NiblessViewController.swift */,
+				22580DF9263BEC6C00B486E9 /* NiblessTableViewCell.swift */,
+				22580E0E263BF4D700B486E9 /* BaseViewModel.swift */,
+			);
+			path = "Base Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +456,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2237DBA42639A4E80077AE4E /* LocationDTO.swift in Sources */,
+				22FE55DC2639637C004D36A3 /* TypeAliases.swift in Sources */,
+				22580E08263BF1BC00B486E9 /* Coordinator.swift in Sources */,
+				22FE55F426396F91004D36A3 /* FligthsSearchRequest.swift in Sources */,
 				22FE556826389138004D36A3 /* KeyboardShowing.swift in Sources */,
+				22580E0C263BF2A700B486E9 /* FlightsCoordinator.swift in Sources */,
+				22580DFA263BEC6C00B486E9 /* NiblessTableViewCell.swift in Sources */,
+				22FE55C3263952B5004D36A3 /* API.swift in Sources */,
+				22FE55E4263963F4004D36A3 /* Networking.swift in Sources */,
+				2237DB92263993F70077AE4E /* UIViewController+SafeArea.swift in Sources */,
+				22580E01263BF17300B486E9 /* AppCoordinator.swift in Sources */,
+				2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */,
+				22580DF7263BE27C00B486E9 /* APIError.swift in Sources */,
+				2237DBA92639A5CD0077AE4E /* LocationPM.swift in Sources */,
+				22FE55ED26396E08004D36A3 /* PlaceDTO.swift in Sources */,
+				22580DE6263BDEE100B486E9 /* LocationModel.swift in Sources */,
+				22FE55D42639630A004D36A3 /* HTTPMethod.swift in Sources */,
+				22FE560026397796004D36A3 /* NiblessViewController.swift in Sources */,
+				2237DB8E263991750077AE4E /* ReusableView.swift in Sources */,
 				22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */,
+				22FE55E826396C22004D36A3 /* FligthsSearchProvider.swift in Sources */,
+				22580E0F263BF4D700B486E9 /* BaseViewModel.swift in Sources */,
+				2237DB9726399F160077AE4E /* AirportCell.swift in Sources */,
+				22580DDC263BDD0300B486E9 /* FligthsSearchProviding.swift in Sources */,
+				22580DE2263BDED600B486E9 /* PlaceModel.swift in Sources */,
+				2237DB8526398E700077AE4E /* FlightsSearchViewModel.swift in Sources */,
+				22FE55FB263976E9004D36A3 /* AirplaneAnimationViewController.swift in Sources */,
+				22FE55CF263962EF004D36A3 /* APIRequest.swift in Sources */,
+				22FE55D82639635C004D36A3 /* APIClientProtocol.swift in Sources */,
+				22FE55CB263962BD004D36A3 /* APIClient.swift in Sources */,
+				22FE55F8263976B7004D36A3 /* FlightsSearchViewController.swift in Sources */,
+				2237DB9C2639A03C0077AE4E /* PlacePM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
