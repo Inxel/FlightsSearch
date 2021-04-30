@@ -20,6 +20,7 @@ final class FlightsSearchViewController: NiblessViewController {
         
         return tableView
     }()
+    private var backgroundView: UIView = UIView()
     private var emptySearchDescriptionLabel: UILabel = UILabel()
     private var searchBar: UISearchBar = UISearchBar()
     
@@ -27,6 +28,11 @@ final class FlightsSearchViewController: NiblessViewController {
     
     private var viewModel: FlightsSearchViewModelProtocol
     private var debouncer: Debouncer = Debouncer(seconds: 0.3)
+    
+    private lazy var tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+        target: self,
+        action: #selector(dismissKeyboard)
+    )
     
     // MARK: - Life Cycle
     
@@ -64,7 +70,13 @@ extension FlightsSearchViewController {
             self?.tableView.reloadData()
             
             UIView.animate(withDuration: 0.3) {
-                self?.tableView.alpha = itemsIsEmpty ? 0 : 1
+                if itemsIsEmpty {
+                    self?.tableView.alpha = 0
+                    self?.backgroundView.alpha = 1
+                } else {
+                    self?.tableView.alpha = 1
+                    self?.backgroundView.alpha = 0
+                }
             }
         }
         
@@ -75,6 +87,10 @@ extension FlightsSearchViewController {
                 cancelButtonTitle: "Ок"
             )
         }
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
@@ -113,11 +129,11 @@ extension FlightsSearchViewController {
     private func configureUI() {
         title = "Поиск аэропорта"
         view.backgroundColor = .white
-        view.addSubview(emptySearchDescriptionLabel)
+        view.addSubview(backgroundView)
         view.addSubview(tableView)
         view.addSubview(searchBar)
         configureTableView()
-        configureEmptySearchDescriptionLabel()
+        configureBackgroundView()
         configureSearchBar()
     }
     
@@ -130,6 +146,17 @@ extension FlightsSearchViewController {
             make.top.equalTo(searchBar.snp.bottom).offset(5)
             make.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    private func configureBackgroundView() {
+        backgroundView.alpha = 1
+        backgroundView.backgroundColor = .white
+        backgroundView.addSubview(emptySearchDescriptionLabel)
+        configureEmptySearchDescriptionLabel()
+        backgroundView.snp.makeConstraints { make in
+            make.leading.top.trailing.bottom.equalToSuperview()
+        }
+        backgroundView.addGestureRecognizer(tapRecognizer)
     }
     
     private func configureEmptySearchDescriptionLabel() {

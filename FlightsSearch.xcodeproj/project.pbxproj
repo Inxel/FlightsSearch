@@ -10,7 +10,7 @@
 		2237DB8526398E700077AE4E /* FlightsSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB8426398E700077AE4E /* FlightsSearchViewModel.swift */; };
 		2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB88263990C70077AE4E /* UITableView+Registration.swift */; };
 		2237DB8E263991750077AE4E /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB8D263991750077AE4E /* ReusableView.swift */; };
-		2237DB92263993F70077AE4E /* UIViewController+SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB91263993F70077AE4E /* UIViewController+SafeArea.swift */; };
+		2237DB92263993F70077AE4E /* UIViewController+Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB91263993F70077AE4E /* UIViewController+Insets.swift */; };
 		2237DB9726399F160077AE4E /* AirportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB9626399F160077AE4E /* AirportCell.swift */; };
 		2237DB9C2639A03C0077AE4E /* PlacePM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DB9B2639A03C0077AE4E /* PlacePM.swift */; };
 		2237DBA42639A4E80077AE4E /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237DBA32639A4E80077AE4E /* LocationDTO.swift */; };
@@ -27,6 +27,7 @@
 		22580E39263C85FC00B486E9 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E38263C85FC00B486E9 /* Debouncer.swift */; };
 		22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E42263C921C00B486E9 /* AlertShowing.swift */; };
 		22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */; };
+		22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4637F263CA22D000E5261 /* UIImage+Icons.swift */; };
 		22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE554A26388D6D004D36A3 /* AppDelegate.swift */; };
 		22FE555226388D6D004D36A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555026388D6D004D36A3 /* Main.storyboard */; };
 		22FE555426388D6F004D36A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555326388D6F004D36A3 /* Assets.xcassets */; };
@@ -52,7 +53,7 @@
 		2237DB8426398E700077AE4E /* FlightsSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsSearchViewModel.swift; sourceTree = "<group>"; };
 		2237DB88263990C70077AE4E /* UITableView+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registration.swift"; sourceTree = "<group>"; };
 		2237DB8D263991750077AE4E /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		2237DB91263993F70077AE4E /* UIViewController+SafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeArea.swift"; sourceTree = "<group>"; };
+		2237DB91263993F70077AE4E /* UIViewController+Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Insets.swift"; sourceTree = "<group>"; };
 		2237DB9626399F160077AE4E /* AirportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCell.swift; sourceTree = "<group>"; };
 		2237DB9B2639A03C0077AE4E /* PlacePM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePM.swift; sourceTree = "<group>"; };
 		2237DBA32639A4E80077AE4E /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		22580E38263C85FC00B486E9 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		22580E42263C921C00B486E9 /* AlertShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowing.swift; sourceTree = "<group>"; };
 		22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneAnimationViewModel.swift; sourceTree = "<group>"; };
+		22B4637F263CA22D000E5261 /* UIImage+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
 		22FE554726388D6D004D36A3 /* FlightsSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightsSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FE554A26388D6D004D36A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22FE555126388D6D004D36A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,7 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				2237DB88263990C70077AE4E /* UITableView+Registration.swift */,
-				2237DB91263993F70077AE4E /* UIViewController+SafeArea.swift */,
+				2237DB91263993F70077AE4E /* UIViewController+Insets.swift */,
+				22B4637F263CA22D000E5261 /* UIImage+Icons.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +241,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		22B4637D263CA1E7000E5261 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22FE554A26388D6D004D36A3 /* AppDelegate.swift */,
+				22FE555326388D6F004D36A3 /* Assets.xcassets */,
+				22FE555026388D6D004D36A3 /* Main.storyboard */,
+				22FE555526388D6F004D36A3 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		22FE553E26388D6D004D36A3 = {
 			isa = PBXGroup;
 			children = (
@@ -257,14 +271,11 @@
 		22FE554926388D6D004D36A3 /* FlightsSearch */ = {
 			isa = PBXGroup;
 			children = (
+				22B4637D263CA1E7000E5261 /* Supporting Files */,
 				22FE55DA26396374004D36A3 /* Common */,
 				22FE556526389120004D36A3 /* Presentation */,
 				22FE55642638910B004D36A3 /* Domain */,
 				22FE556326389104004D36A3 /* Data */,
-				22FE554A26388D6D004D36A3 /* AppDelegate.swift */,
-				22FE555026388D6D004D36A3 /* Main.storyboard */,
-				22FE555326388D6F004D36A3 /* Assets.xcassets */,
-				22FE555526388D6F004D36A3 /* LaunchScreen.storyboard */,
 				22FE555826388D6F004D36A3 /* Info.plist */,
 			);
 			path = FlightsSearch;
@@ -499,10 +510,11 @@
 				22580DFA263BEC6C00B486E9 /* NiblessTableViewCell.swift in Sources */,
 				22FE55C3263952B5004D36A3 /* API.swift in Sources */,
 				22FE55E4263963F4004D36A3 /* Networking.swift in Sources */,
-				2237DB92263993F70077AE4E /* UIViewController+SafeArea.swift in Sources */,
+				2237DB92263993F70077AE4E /* UIViewController+Insets.swift in Sources */,
 				22580E01263BF17300B486E9 /* AppCoordinator.swift in Sources */,
 				2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */,
 				22580DF7263BE27C00B486E9 /* APIError.swift in Sources */,
+				22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */,
 				2237DBA92639A5CD0077AE4E /* LocationPM.swift in Sources */,
 				22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */,
 				22FE55ED26396E08004D36A3 /* PlaceDTO.swift in Sources */,
@@ -670,16 +682,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6K44Y49J8;
+				DEVELOPMENT_TEAM = G3L84SD56C;
 				INFOPLIST_FILE = FlightsSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Zago.FlightsSearch;
+				PRODUCT_BUNDLE_IDENTIFIER = ArtyomZagoskin.FlightsSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -690,16 +704,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X6K44Y49J8;
+				DEVELOPMENT_TEAM = G3L84SD56C;
 				INFOPLIST_FILE = FlightsSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Zago.FlightsSearch;
+				PRODUCT_BUNDLE_IDENTIFIER = ArtyomZagoskin.FlightsSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

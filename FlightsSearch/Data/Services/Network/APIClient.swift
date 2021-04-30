@@ -13,7 +13,6 @@ final class APIClient: APIClientProtocol {
     
     // MARK: Properties
     
-    #warning("Это стоит инджектить")
     private lazy var session: URLSession = {
         let configuration: URLSessionConfiguration = .default
         let session = URLSession(configuration: configuration)

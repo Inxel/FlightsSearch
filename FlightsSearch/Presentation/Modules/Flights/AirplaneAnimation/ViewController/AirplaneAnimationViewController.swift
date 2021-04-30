@@ -7,16 +7,24 @@
 
 import UIKit
 import MapKit
+import SnapKit
 
 final class AirplaneAnimationViewController: NiblessViewController {
     
     // MARK: - UI Elements
     
-    private var myMapView: MKMapView = MKMapView()
+    private var mapView: MKMapView = MKMapView()
     
     // MARK: - Properties
     
     private var viewModel: AirplaneAnimationViewModelProtocol
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureUI()
+    }
     
     // MARK: - Init
     
@@ -26,3 +34,23 @@ final class AirplaneAnimationViewController: NiblessViewController {
     }
     
 }
+
+// MARK: - Layout
+
+extension AirplaneAnimationViewController {
+    
+    private func configureUI() {
+        view.backgroundColor = .white
+        view.addSubview(mapView)
+        configureMapView()
+    }
+    
+    private func configureMapView() {
+        mapView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+}
+
