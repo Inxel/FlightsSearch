@@ -20,3 +20,11 @@ extension LocationPM {
     }
     
 }
+
+extension LocationPM: Equatable {
+    
+    static func == (lhs: LocationPM, rhs: LocationPM) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+    
+}

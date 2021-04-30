@@ -8,10 +8,12 @@
 import Foundation
 
 protocol FlightsSearchViewModelProtocol {
-    var items: [PlacePM] { get set }
-    var itemsDidUpdate: Handler? { get set }
+    var items: [PlacePM] { get }
+    var itemsDidUpdate: TypeHandler<Bool>? { get set }
+    var sameAirportDidSelect: Handler? { get set }
     func didSelectItem(at index: Int)
     func getAirports(query: String)
+    func setItems(items: [PlacePM])
 }
 
 final class FlightsSearchViewModel: BaseViewModel<FlightsCoordinator> {
@@ -20,12 +22,20 @@ final class FlightsSearchViewModel: BaseViewModel<FlightsCoordinator> {
     
     private let provider: FligthsSearchProviding
     
-    var items: [PlacePM] = [] {
+    private(set) var items: [PlacePM] = [] {
         didSet {
-            itemsDidUpdate?()
+            itemsDidUpdate?(items.isEmpty)
         }
     }
-    var itemsDidUpdate: Handler?
+    var itemsDidUpdate: TypeHandler<Bool>?
+    var sameAirportDidSelect: Handler?
+    
+    private var depaturePlace: PlacePM = PlacePM(
+        city: NSAttributedString(string: "Saint Petersburg, Russia"),
+        airport: NSAttributedString(string: "Pulkovo Airport"),
+        iata: "LED",
+        location: LocationPM(latitude: 59.806084, longitude: 30.3083)
+    )
     
     // MARK: - Init
     
@@ -52,6 +62,10 @@ extension FlightsSearchViewModel {
         }
     }
     
+    func setItems(items: [PlacePM]) {
+        self.items = items
+    }
+    
 }
 
 // MARK: - FlightsSearchViewModelProtocol
@@ -59,7 +73,14 @@ extension FlightsSearchViewModel {
 extension FlightsSearchViewModel: FlightsSearchViewModelProtocol {
     
     func didSelectItem(at index: Int) {
+        let destinationPlace = items[index]
         
+        guard destinationPlace != depaturePlace else {
+            sameAirportDidSelect?()
+            return
+        }
+        
+        coordinator?.goToAirplaneAnimationViewController(departurePlace: depaturePlace, destinationPlace: destinationPlace)
     }
     
 }

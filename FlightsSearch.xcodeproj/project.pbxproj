@@ -24,6 +24,9 @@
 		22580E08263BF1BC00B486E9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E07263BF1BC00B486E9 /* Coordinator.swift */; };
 		22580E0C263BF2A700B486E9 /* FlightsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E0B263BF2A700B486E9 /* FlightsCoordinator.swift */; };
 		22580E0F263BF4D700B486E9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E0E263BF4D700B486E9 /* BaseViewModel.swift */; };
+		22580E39263C85FC00B486E9 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E38263C85FC00B486E9 /* Debouncer.swift */; };
+		22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E42263C921C00B486E9 /* AlertShowing.swift */; };
+		22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */; };
 		22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE554A26388D6D004D36A3 /* AppDelegate.swift */; };
 		22FE555226388D6D004D36A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555026388D6D004D36A3 /* Main.storyboard */; };
 		22FE555426388D6F004D36A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555326388D6F004D36A3 /* Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		22580E07263BF1BC00B486E9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		22580E0B263BF2A700B486E9 /* FlightsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsCoordinator.swift; sourceTree = "<group>"; };
 		22580E0E263BF4D700B486E9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		22580E38263C85FC00B486E9 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		22580E42263C921C00B486E9 /* AlertShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowing.swift; sourceTree = "<group>"; };
+		22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneAnimationViewModel.swift; sourceTree = "<group>"; };
 		22FE554726388D6D004D36A3 /* FlightsSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightsSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FE554A26388D6D004D36A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22FE555126388D6D004D36A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -208,6 +214,30 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		22580E37263C85E800B486E9 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				22580E38263C85FC00B486E9 /* Debouncer.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		22580E45263C96DF00B486E9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22FE55FA263976E9004D36A3 /* AirplaneAnimationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		22580E46263C96E700B486E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		22FE553E26388D6D004D36A3 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +306,7 @@
 			children = (
 				22FE556726389138004D36A3 /* KeyboardShowing.swift */,
 				2237DB8D263991750077AE4E /* ReusableView.swift */,
+				22580E42263C921C00B486E9 /* AlertShowing.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -300,7 +331,8 @@
 		22FE556E26389383004D36A3 /* AirplaneAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				22FE55FA263976E9004D36A3 /* AirplaneAnimationViewController.swift */,
+				22580E46263C96E700B486E9 /* ViewModel */,
+				22580E45263C96DF00B486E9 /* ViewController */,
 			);
 			path = AirplaneAnimation;
 			sourceTree = "<group>";
@@ -341,6 +373,7 @@
 		22FE55DA26396374004D36A3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				22580E37263C85E800B486E9 /* Misc */,
 				22FE55DB2639637C004D36A3 /* TypeAliases.swift */,
 			);
 			path = Common;
@@ -462,6 +495,7 @@
 				22FE55F426396F91004D36A3 /* FligthsSearchRequest.swift in Sources */,
 				22FE556826389138004D36A3 /* KeyboardShowing.swift in Sources */,
 				22580E0C263BF2A700B486E9 /* FlightsCoordinator.swift in Sources */,
+				22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */,
 				22580DFA263BEC6C00B486E9 /* NiblessTableViewCell.swift in Sources */,
 				22FE55C3263952B5004D36A3 /* API.swift in Sources */,
 				22FE55E4263963F4004D36A3 /* Networking.swift in Sources */,
@@ -470,12 +504,14 @@
 				2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */,
 				22580DF7263BE27C00B486E9 /* APIError.swift in Sources */,
 				2237DBA92639A5CD0077AE4E /* LocationPM.swift in Sources */,
+				22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */,
 				22FE55ED26396E08004D36A3 /* PlaceDTO.swift in Sources */,
 				22580DE6263BDEE100B486E9 /* LocationModel.swift in Sources */,
 				22FE55D42639630A004D36A3 /* HTTPMethod.swift in Sources */,
 				22FE560026397796004D36A3 /* NiblessViewController.swift in Sources */,
 				2237DB8E263991750077AE4E /* ReusableView.swift in Sources */,
 				22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */,
+				22580E39263C85FC00B486E9 /* Debouncer.swift in Sources */,
 				22FE55E826396C22004D36A3 /* FligthsSearchProvider.swift in Sources */,
 				22580E0F263BF4D700B486E9 /* BaseViewModel.swift in Sources */,
 				2237DB9726399F160077AE4E /* AirportCell.swift in Sources */,

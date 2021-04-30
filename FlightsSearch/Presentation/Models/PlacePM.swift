@@ -9,7 +9,7 @@ import UIKit
 
 struct PlacePM {
     let city: NSAttributedString
-    let title: NSAttributedString
+    let airport: NSAttributedString
     let iata: String
     let location: LocationPM
 }
@@ -18,20 +18,28 @@ extension PlacePM {
     
     init(place: PlaceModel) {
         let cityAttributedText = NSMutableAttributedString(string: place.name)
-        let titleAttributedText = NSMutableAttributedString(string: place.airportName ?? "Any airport")
-        let cityRange = (place.name as NSString).range(of: place.query)
-        let titleRange = (place.airportName as NSString?)?.range(of: place.query)
+        let airportName = place.airportName ?? "Any airport"
+        let airportAttributedText = NSMutableAttributedString(string: airportName)
+        let cityRange = (place.name.lowercased() as NSString).range(of: place.query.lowercased())
+        let airportRange = (airportName.lowercased() as NSString).range(of: place.query.lowercased())
         
         cityAttributedText.addAttribute(.foregroundColor, value: UIColor.systemBlue, range: cityRange)
-        
-        if let range = titleRange {
-            titleAttributedText.addAttribute(.foregroundColor, value: UIColor.systemBlue, range: range)
-        }
+        airportAttributedText.addAttribute(.foregroundColor, value: UIColor.systemBlue, range: airportRange)
         
         city = cityAttributedText
-        title = titleAttributedText
+        airport = airportAttributedText
         iata = place.iata
         location = LocationPM(locationModel: place.location)
+    }
+    
+}
+
+// MARK: - Equatable
+
+extension PlacePM: Equatable {
+    
+    static func == (lhs: PlacePM, rhs: PlacePM) -> Bool {
+        return lhs.location == rhs.location
     }
     
 }

@@ -33,7 +33,7 @@ extension AirportCell {
     
     func setUp(with model: PlacePM) {
         cityLabel.attributedText = model.city
-        titleLabel.attributedText = model.title
+        titleLabel.attributedText = model.airport
         iataLabel.text = model.iata
     }
     
@@ -71,18 +71,19 @@ extension AirportCell {
         cityLabel.font = .systemFont(ofSize: 17)
         cityLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         cityLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        cityLabel.textColor = .white
+        cityLabel.textColor = .black
     }
     
     private func configureTitleLabel() {
         titleLabel.font = .systemFont(ofSize: 13)
         titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         titleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
-        titleLabel.textColor = .white
+        titleLabel.textColor = .black
     }
     
     private func configureIataLabel() {
         iataLabel.textAlignment = .right
+        iataLabel.textColor = .black
         iataLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-20)

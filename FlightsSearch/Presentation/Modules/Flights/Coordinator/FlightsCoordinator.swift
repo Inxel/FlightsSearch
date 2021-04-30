@@ -33,4 +33,14 @@ extension FlightsCoordinator {
         navigationController.setViewControllers([controller], animated: true)
     }
     
+    func goToAirplaneAnimationViewController(departurePlace: PlacePM, destinationPlace: PlacePM) {
+        let viewModel = AirplaneAnimationViewModel(
+            coordinator: self,
+            departurePlace: departurePlace,
+            destinationPlace: destinationPlace
+        )
+        let controller = AirplaneAnimationViewController(viewModel: viewModel)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
 }
