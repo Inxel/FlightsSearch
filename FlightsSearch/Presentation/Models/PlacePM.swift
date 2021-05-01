@@ -23,8 +23,8 @@ extension PlacePM {
         let cityRange = (place.name.lowercased() as NSString).range(of: place.query.lowercased())
         let airportRange = (airportName.lowercased() as NSString).range(of: place.query.lowercased())
         
-        cityAttributedText.addAttribute(.foregroundColor, value: UIColor.systemBlue, range: cityRange)
-        airportAttributedText.addAttribute(.foregroundColor, value: UIColor.systemBlue, range: airportRange)
+        cityAttributedText.addAttribute(.foregroundColor, value: UIColor.primaryTintColor, range: cityRange)
+        airportAttributedText.addAttribute(.foregroundColor, value: UIColor.primaryTintColor, range: airportRange)
         
         city = cityAttributedText
         airport = airportAttributedText

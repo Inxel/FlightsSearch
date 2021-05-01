@@ -10,6 +10,8 @@ import Foundation
 protocol AirplaneAnimationViewModelProtocol {
     var departurePlace: PlacePM { get }
     var destinationPlace: PlacePM { get }
+    func convertDegreesToRadians(degrees: Double) -> Double
+    func getAngleBetween(firstPoint: Point, lastPoint: Point) -> Double
 }
 
 final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
@@ -29,6 +31,29 @@ final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
     
 }
 
+// MARK: - Private API
+
+extension AirplaneAnimationViewModel {
+    
+    private func convertRadiansToDegrees(radians: Double) -> Double {
+        return radians * 180.0 / .pi
+    }
+    
+}
+
 // MARK: - AirplaneAnimationViewModelProtocol
 
-extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {}
+extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {
+    
+    func convertDegreesToRadians(degrees: Double) -> Double {
+        return degrees * .pi / 180.0
+    }
+    
+    func getAngleBetween(firstPoint: Point, lastPoint: Point) -> Double {
+        let x: Double = lastPoint.x - firstPoint.x
+        let y: Double = lastPoint.y - firstPoint.y
+        
+        return fmod(convertRadiansToDegrees(radians: atan2(y, x)), 360.0)
+    }
+    
+}

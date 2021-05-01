@@ -140,13 +140,13 @@ extension FlightsSearchViewController: UITableViewDelegate {
     
 }
 
-// MARK: - Layout
+// MARK: - Configure Layout
 
 extension FlightsSearchViewController {
     
     private func configureUI() {
         title = "Поиск аэропорта"
-        view.backgroundColor = .white
+        view.backgroundColor = .primaryBackgroundColor
         view.addSubview(backgroundView)
         view.addSubview(tableView)
         view.addSubview(searchBar)
@@ -157,8 +157,9 @@ extension FlightsSearchViewController {
     
     private func configureTableView() {
         tableView.alpha = 0
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .primaryBackgroundColor
         tableView.keyboardDismissMode = .interactive
+        tableView.separatorStyle = .none
         tableView.alwaysBounceVertical = true
         tableView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(5)
@@ -168,7 +169,7 @@ extension FlightsSearchViewController {
     
     private func configureBackgroundView() {
         backgroundView.alpha = 1
-        backgroundView.backgroundColor = .white
+        backgroundView.backgroundColor = .primaryBackgroundColor
         backgroundView.addSubview(descriptionLabel)
         configureDescriptionLabel()
         backgroundView.snp.makeConstraints { make in
@@ -181,7 +182,7 @@ extension FlightsSearchViewController {
         descriptionLabel.text = Constants.emptySearchBarDescription
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = .black
+        descriptionLabel.textColor = .primaryTextColor
         descriptionLabel.font = .boldSystemFont(ofSize: 20)
         descriptionLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -193,7 +194,7 @@ extension FlightsSearchViewController {
     private func configureSearchBar() {
         searchBar.placeholder = "Moscow"
         searchBar.searchBarStyle = .minimal
-        searchBar.barTintColor = .white
+        searchBar.barTintColor = .primaryBackgroundColor
         searchBar.delegate = self
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)

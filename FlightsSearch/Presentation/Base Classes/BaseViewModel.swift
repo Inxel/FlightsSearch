@@ -9,7 +9,11 @@ import Foundation
 
 class BaseViewModel<C: Coordinator> {
     
+    // MARK: - Properties
+    
     weak var coordinator: C?
+    
+    // MARK: - Init
     
     init(coordinator: C) {
         self.coordinator = coordinator

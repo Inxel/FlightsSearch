@@ -16,8 +16,8 @@ class NiblessTableViewCell: UITableViewCell {
         commonInit()
     }
     
-    @available(*, unavailable, message: "This controller is nibless")
-    public required init?(coder: NSCoder) {
+    @available(*, unavailable, message: "This cell is nibless")
+    required init?(coder: NSCoder) {
         fatalError("Loading this TableViewCell from a nib is unsupported. File: \(#file); Line: \(#line)")
     }
     

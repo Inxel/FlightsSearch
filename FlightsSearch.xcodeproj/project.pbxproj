@@ -29,6 +29,16 @@
 		22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */; };
 		22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4637F263CA22D000E5261 /* UIImage+Icons.swift */; };
 		22B46388263CA953000E5261 /* Optional+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B46387263CA953000E5261 /* Optional+String.swift */; };
+		22B4638D263DCAE1000E5261 /* AirportAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4638C263DCAE1000E5261 /* AirportAnnotationView.swift */; };
+		22B46391263DD333000E5261 /* CLLocationCoordinate2D+CustomInits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B46390263DD333000E5261 /* CLLocationCoordinate2D+CustomInits.swift */; };
+		22B46396263DD5B1000E5261 /* MapView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B46395263DD5B1000E5261 /* MapView+Dequeueing.swift */; };
+		22B46399263DD7A8000E5261 /* AirportPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B46398263DD7A8000E5261 /* AirportPointAnnotation.swift */; };
+		22B4639D263DE874000E5261 /* PlaneAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4639C263DE874000E5261 /* PlaneAnnotationView.swift */; };
+		22B463A3263DE8CD000E5261 /* PlaneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B463A2263DE8CD000E5261 /* PlaneAnnotation.swift */; };
+		22B463A8263DE91D000E5261 /* NiblessAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B463A7263DE91D000E5261 /* NiblessAnnotationView.swift */; };
+		22B463AC263DFA2E000E5261 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B463AB263DFA2E000E5261 /* Point.swift */; };
+		22B463AF263E0165000E5261 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B463AE263E0165000E5261 /* UIColor+CustomColors.swift */; };
+		22B463BB263E0425000E5261 /* UIColor+CustomInits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B463BA263E0425000E5261 /* UIColor+CustomInits.swift */; };
 		22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE554A26388D6D004D36A3 /* AppDelegate.swift */; };
 		22FE555226388D6D004D36A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555026388D6D004D36A3 /* Main.storyboard */; };
 		22FE555426388D6F004D36A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FE555326388D6F004D36A3 /* Assets.xcassets */; };
@@ -73,6 +83,16 @@
 		22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneAnimationViewModel.swift; sourceTree = "<group>"; };
 		22B4637F263CA22D000E5261 /* UIImage+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
 		22B46387263CA953000E5261 /* Optional+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+String.swift"; sourceTree = "<group>"; };
+		22B4638C263DCAE1000E5261 /* AirportAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportAnnotationView.swift; sourceTree = "<group>"; };
+		22B46390263DD333000E5261 /* CLLocationCoordinate2D+CustomInits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+CustomInits.swift"; sourceTree = "<group>"; };
+		22B46395263DD5B1000E5261 /* MapView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Dequeueing.swift"; sourceTree = "<group>"; };
+		22B46398263DD7A8000E5261 /* AirportPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPointAnnotation.swift; sourceTree = "<group>"; };
+		22B4639C263DE874000E5261 /* PlaneAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnnotationView.swift; sourceTree = "<group>"; };
+		22B463A2263DE8CD000E5261 /* PlaneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneAnnotation.swift; sourceTree = "<group>"; };
+		22B463A7263DE91D000E5261 /* NiblessAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessAnnotationView.swift; sourceTree = "<group>"; };
+		22B463AB263DFA2E000E5261 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		22B463AE263E0165000E5261 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		22B463BA263E0425000E5261 /* UIColor+CustomInits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomInits.swift"; sourceTree = "<group>"; };
 		22FE554726388D6D004D36A3 /* FlightsSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightsSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FE554A26388D6D004D36A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22FE555126388D6D004D36A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,9 +130,12 @@
 		2237DB87263990AF0077AE4E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				22B463B9263E040F000E5261 /* UIColor */,
 				2237DB88263990C70077AE4E /* UITableView+Registration.swift */,
 				2237DB91263993F70077AE4E /* UIViewController+Insets.swift */,
 				22B4637F263CA22D000E5261 /* UIImage+Icons.swift */,
+				22B46390263DD333000E5261 /* CLLocationCoordinate2D+CustomInits.swift */,
+				22B46395263DD5B1000E5261 /* MapView+Dequeueing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +178,7 @@
 			children = (
 				22580DE1263BDED600B486E9 /* PlaceModel.swift */,
 				22580DE5263BDEE100B486E9 /* LocationModel.swift */,
+				22B463AB263DFA2E000E5261 /* Point.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +286,42 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		22B4638B263DCAC0000E5261 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				22B463A1263DE8C0000E5261 /* PlaneAnnotations */,
+				22B463A0263DE8B4000E5261 /* AirportAnnotations */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
+		22B463A0263DE8B4000E5261 /* AirportAnnotations */ = {
+			isa = PBXGroup;
+			children = (
+				22B4638C263DCAE1000E5261 /* AirportAnnotationView.swift */,
+				22B46398263DD7A8000E5261 /* AirportPointAnnotation.swift */,
+			);
+			path = AirportAnnotations;
+			sourceTree = "<group>";
+		};
+		22B463A1263DE8C0000E5261 /* PlaneAnnotations */ = {
+			isa = PBXGroup;
+			children = (
+				22B4639C263DE874000E5261 /* PlaneAnnotationView.swift */,
+				22B463A2263DE8CD000E5261 /* PlaneAnnotation.swift */,
+			);
+			path = PlaneAnnotations;
+			sourceTree = "<group>";
+		};
+		22B463B9263E040F000E5261 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				22B463AE263E0165000E5261 /* UIColor+CustomColors.swift */,
+				22B463BA263E0425000E5261 /* UIColor+CustomInits.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		22FE553E26388D6D004D36A3 = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +372,7 @@
 		22FE556526389120004D36A3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				22B4638B263DCAC0000E5261 /* Annotations */,
 				22580DFD263BF13D00B486E9 /* Coordinator */,
 				2237DB9A2639A0210077AE4E /* Models */,
 				2237DB87263990AF0077AE4E /* Extensions */,
@@ -430,6 +491,7 @@
 			children = (
 				22FE55FF26397796004D36A3 /* NiblessViewController.swift */,
 				22580DF9263BEC6C00B486E9 /* NiblessTableViewCell.swift */,
+				22B463A7263DE91D000E5261 /* NiblessAnnotationView.swift */,
 				22580E0E263BF4D700B486E9 /* BaseViewModel.swift */,
 			);
 			path = "Base Classes";
@@ -516,26 +578,35 @@
 				22580E08263BF1BC00B486E9 /* Coordinator.swift in Sources */,
 				22FE55F426396F91004D36A3 /* FligthsSearchRequest.swift in Sources */,
 				22FE556826389138004D36A3 /* KeyboardShowing.swift in Sources */,
+				22B4638D263DCAE1000E5261 /* AirportAnnotationView.swift in Sources */,
 				22580E0C263BF2A700B486E9 /* FlightsCoordinator.swift in Sources */,
 				22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */,
 				22580DFA263BEC6C00B486E9 /* NiblessTableViewCell.swift in Sources */,
 				22FE55C3263952B5004D36A3 /* API.swift in Sources */,
+				22B46391263DD333000E5261 /* CLLocationCoordinate2D+CustomInits.swift in Sources */,
 				22FE55E4263963F4004D36A3 /* Networking.swift in Sources */,
 				2237DB92263993F70077AE4E /* UIViewController+Insets.swift in Sources */,
 				22580E01263BF17300B486E9 /* AppCoordinator.swift in Sources */,
 				2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */,
 				22580DF7263BE27C00B486E9 /* APIError.swift in Sources */,
 				22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */,
+				22B46399263DD7A8000E5261 /* AirportPointAnnotation.swift in Sources */,
 				2237DBA92639A5CD0077AE4E /* LocationPM.swift in Sources */,
 				22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */,
 				22FE55ED26396E08004D36A3 /* PlaceDTO.swift in Sources */,
 				22580DE6263BDEE100B486E9 /* LocationModel.swift in Sources */,
+				22B463BB263E0425000E5261 /* UIColor+CustomInits.swift in Sources */,
+				22B463A3263DE8CD000E5261 /* PlaneAnnotation.swift in Sources */,
 				22FE55D42639630A004D36A3 /* HTTPMethod.swift in Sources */,
 				22FE560026397796004D36A3 /* NiblessViewController.swift in Sources */,
 				2237DB8E263991750077AE4E /* ReusableView.swift in Sources */,
+				22B4639D263DE874000E5261 /* PlaneAnnotationView.swift in Sources */,
 				22FE554B26388D6D004D36A3 /* AppDelegate.swift in Sources */,
+				22B463AF263E0165000E5261 /* UIColor+CustomColors.swift in Sources */,
+				22B463A8263DE91D000E5261 /* NiblessAnnotationView.swift in Sources */,
 				22580E39263C85FC00B486E9 /* Debouncer.swift in Sources */,
 				22FE55E826396C22004D36A3 /* FligthsSearchProvider.swift in Sources */,
+				22B46396263DD5B1000E5261 /* MapView+Dequeueing.swift in Sources */,
 				22580E0F263BF4D700B486E9 /* BaseViewModel.swift in Sources */,
 				2237DB9726399F160077AE4E /* AirportCell.swift in Sources */,
 				22580DDC263BDD0300B486E9 /* FligthsSearchProviding.swift in Sources */,
@@ -545,6 +616,7 @@
 				22FE55CF263962EF004D36A3 /* APIRequest.swift in Sources */,
 				22FE55D82639635C004D36A3 /* APIClientProtocol.swift in Sources */,
 				22FE55CB263962BD004D36A3 /* APIClient.swift in Sources */,
+				22B463AC263DFA2E000E5261 /* Point.swift in Sources */,
 				22FE55F8263976B7004D36A3 /* FlightsSearchViewController.swift in Sources */,
 				22B46388263CA953000E5261 /* Optional+String.swift in Sources */,
 				2237DB9C2639A03C0077AE4E /* PlacePM.swift in Sources */,
