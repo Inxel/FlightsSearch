@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import MapKit
 
 protocol AirplaneAnimationViewModelProtocol {
     var departurePlace: PlacePM { get }
     var destinationPlace: PlacePM { get }
-    func convertDegreesToRadians(degrees: Double) -> Double
-    func getAngleBetween(firstPoint: Point, lastPoint: Point) -> Double
+    var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>? { get set }
+    func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int)
 }
 
 final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
@@ -20,6 +21,7 @@ final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
     
     private(set) var departurePlace: PlacePM
     private(set) var destinationPlace: PlacePM
+    var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>?
     
     // MARK: - Init
     
@@ -39,21 +41,40 @@ extension AirplaneAnimationViewModel {
         return radians * 180.0 / .pi
     }
     
+    private func convertDegreesToRadians(degrees: Double) -> Double {
+        return degrees * .pi / 180.0
+    }
+    
+    private func getDirectionBetween(firstPoint: MKMapPoint, lastPoint: MKMapPoint) -> Double {
+        let x: Double = lastPoint.x - firstPoint.x
+        let y: Double = lastPoint.y - firstPoint.y
+        
+        return fmod(convertRadiansToDegrees(radians: atan2(y, x)), 360.0)
+    }
+    
 }
 
 // MARK: - AirplaneAnimationViewModelProtocol
 
 extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {
     
-    func convertDegreesToRadians(degrees: Double) -> Double {
-        return degrees * .pi / 180.0
-    }
-    
-    func getAngleBetween(firstPoint: Point, lastPoint: Point) -> Double {
-        let x: Double = lastPoint.x - firstPoint.x
-        let y: Double = lastPoint.y - firstPoint.y
+    func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int) {
+        let step = 5
+        let updatedPosition = currentPosition + step
+        guard updatedPosition < flightpathPolyline.pointCount else { return }
         
-        return fmod(convertRadiansToDegrees(radians: atan2(y, x)), 360.0)
+        let polylinePoints = flightpathPolyline.points()
+        let previousPoint = polylinePoints[currentPosition]
+        let nextPoint = polylinePoints[updatedPosition]
+        
+        let direction = getDirectionBetween(firstPoint: previousPoint, lastPoint: nextPoint)
+        let angle = convertDegreesToRadians(degrees: direction)
+        
+        planeShouldUpdate?((nextPoint.coordinate, angle))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.updatePlanePosition(flightpathPolyline: flightpathPolyline, currentPosition: updatedPosition)
+        }
     }
     
 }

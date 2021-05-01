@@ -20,7 +20,7 @@ final class AirportAnnotationView: NiblessAnnotationView, ReusableView {
     
 }
 
-// MARK: - Private API
+// MARK: - Configure Layout
 
 extension AirportAnnotationView {
     

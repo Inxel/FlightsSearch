@@ -47,25 +47,12 @@ extension AirplaneAnimationViewController {
         mapView.addAnnotation(annotation)
     }
     
-    private func updatePlanePosition(currentPosition: Int = 0) {
-        let step = 5
-        let updatedPosition = currentPosition + step
-        guard updatedPosition < flightpathPolyline.pointCount else { return }
-        
-        let polylinePoints = flightpathPolyline.points()
-        let previousMapPoint = polylinePoints[currentPosition]
-        let nextMapPoint = polylinePoints[updatedPosition]
-        
-        let planeDirection = viewModel.getAngleBetween(
-            firstPoint: Point(x: previousMapPoint.x, y: previousMapPoint.y),
-            lastPoint: Point(x: nextMapPoint.x, y: nextMapPoint.y)
-        )
-        
-        planeAnnotation.coordinate = nextMapPoint.coordinate
-        planeAnnotationView?.transform = mapView.transform.rotated(by: CGFloat(viewModel.convertDegreesToRadians(degrees: planeDirection)))
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.updatePlanePosition(currentPosition: updatedPosition)
+    private func updatePlanePosition() {
+        viewModel.updatePlanePosition(flightpathPolyline: flightpathPolyline, currentPosition: 0)
+        viewModel.planeShouldUpdate = { [weak self] position in
+            guard let self = self else { return }
+            self.planeAnnotation.coordinate = position.coordinate
+            self.planeAnnotationView?.transform = self.mapView.transform.rotated(by: CGFloat(position.angle))
         }
     }
     

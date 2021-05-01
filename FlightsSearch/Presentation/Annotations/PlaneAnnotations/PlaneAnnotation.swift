@@ -7,8 +7,4 @@
 
 import MapKit
 
-final class PlaneAnnotation: MKPointAnnotation {
-    
-   
-    
-}
+final class PlaneAnnotation: MKPointAnnotation {}
