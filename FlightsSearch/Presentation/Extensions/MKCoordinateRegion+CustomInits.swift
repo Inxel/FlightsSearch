@@ -12,6 +12,7 @@ extension MKCoordinateRegion {
     init(coordinates: [CLLocationCoordinate2D], spanMultiplier: CLLocationDistance = 1.8) {
         var topLeftCoord = CLLocationCoordinate2D(latitude: -90, longitude: 180)
         var bottomRightCoord = CLLocationCoordinate2D(latitude: 90, longitude: -180)
+        let maxLocationDegreesValue = 180.0
 
         for coordinate in coordinates {
             topLeftCoord.longitude = min(topLeftCoord.longitude, coordinate.longitude)
@@ -26,9 +27,12 @@ extension MKCoordinateRegion {
             longitude: topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5
         )
         
+        let latitudeDelta = abs(topLeftCoord.latitude - bottomRightCoord.latitude) * spanMultiplier
+        let longitudeDelta = abs(bottomRightCoord.longitude - topLeftCoord.longitude) * spanMultiplier
+        
         let span = MKCoordinateSpan(
-            latitudeDelta: abs(topLeftCoord.latitude - bottomRightCoord.latitude) * spanMultiplier,
-            longitudeDelta: abs(bottomRightCoord.longitude - topLeftCoord.longitude) * spanMultiplier
+            latitudeDelta: min(latitudeDelta, maxLocationDegreesValue),
+            longitudeDelta: min(longitudeDelta, maxLocationDegreesValue)
         )
 
         self.init(center: cent, span: span)
