@@ -11,6 +11,18 @@ import SnapKit
 
 final class AirportAnnotationView: NiblessAnnotationView, ReusableView {
     
+    // MARK: - UI Elements
+    
+    private let backgroundView: UIView = UIView()
+    private let titleLabel: UILabel = UILabel()
+    
+    // MARK: - Life Cycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+//        titleLabel.text = ""
+    }
+    
     // MARK: - Init
     
     init(annotation: AirportPointAnnotation?, reuseIdentifier: String?) {
@@ -25,47 +37,41 @@ final class AirportAnnotationView: NiblessAnnotationView, ReusableView {
 extension AirportAnnotationView {
     
     private func configureUI(annotation: AirportPointAnnotation?) {
-        let view = createView()
-        let label = createLabel(withTitle: annotation?.title)
+        configureBackgroundView(annotation: annotation)
         
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(5)
-            make.bottom.equalTo(view).offset(-5)
-            make.leading.equalTo(view).offset(10)
-            make.trailing.equalTo(view).offset(-10)
-            make.centerX.centerY.equalTo(view)
-        }
-        
-        let size = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        view.frame.size = size
-        view.frame.origin = .init(
-            x: view.frame.minX - view.frame.width / 2,
-            y: view.frame.minY - view.frame.height / 2
+        let size = backgroundView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        backgroundView.frame.size = size
+        backgroundView.frame.origin = .init(
+            x: backgroundView.frame.minX - backgroundView.frame.width / 2,
+            y: backgroundView.frame.minY - backgroundView.frame.height / 2
         )
-        view.layer.cornerRadius = size.height / 2
+        backgroundView.layer.cornerRadius = size.height / 2
         
-        addSubview(view)
+        addSubview(backgroundView)
     }
     
-    private func createView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = .primaryBackgroundColor
-        view.layer.borderColor = UIColor.primaryTintColor.cgColor
-        view.layer.borderWidth = 3
-        view.alpha = 0.8
+    private func configureBackgroundView(annotation: AirportPointAnnotation?) {
+        backgroundView.backgroundColor = .primaryBackgroundColor
+        backgroundView.layer.borderColor = UIColor.primaryTintColor.cgColor
+        backgroundView.layer.borderWidth = 3
+        backgroundView.alpha = 0.8
+        backgroundView.addSubview(titleLabel)
         
-        return view
+        configureTitleLabel(withTitle: annotation?.title)
     }
     
-    private func createLabel(withTitle title: String?) -> UILabel {
-        let label = UILabel()
-        label.text = title
-        label.font = .boldSystemFont(ofSize: 17)
-        label.textColor = .primaryTintColor
+    private func configureTitleLabel(withTitle title: String?) {
+        titleLabel.text = title
+        titleLabel.font = .boldSystemFont(ofSize: 17)
+        titleLabel.textColor = .primaryTintColor
         
-        return label
-        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(backgroundView).offset(5)
+            make.bottom.equalTo(backgroundView).offset(-5)
+            make.leading.equalTo(backgroundView).offset(10)
+            make.trailing.equalTo(backgroundView).offset(-10)
+            make.centerX.centerY.equalTo(backgroundView)
+        }
     }
     
 }

@@ -70,6 +70,15 @@ extension AirplaneAnimationViewController {
     
     private func configureMapView() {
         mapView.delegate = self
+        mapView.isRotateEnabled = false
+        mapView.centerCoordinate = CLLocationCoordinate2D(location: viewModel.mapCenter)
+        
+        let p1 = CLLocationCoordinate2D(place: viewModel.departurePlace)
+        let p2 = CLLocationCoordinate2D(place: viewModel.destinationPlace)
+        
+        let region = MKCoordinateRegion(coordinates: [p1, p2], spanMultiplier: 2)
+        mapView.setRegion(region, animated: false)
+        
         mapView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.bottom.equalToSuperview()
