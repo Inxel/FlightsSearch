@@ -11,6 +11,7 @@ struct PlaceModel {
     let name: String
     let airportName: String?
     let iata: String
+    let cityIata: String?
     let location: LocationModel
     let query: String
 }
@@ -21,6 +22,7 @@ extension PlaceModel {
         name = placeDTO.name
         airportName = placeDTO.airportName
         iata = placeDTO.iata
+        cityIata = placeDTO.cityIata
         location = LocationModel(locationDTO: placeDTO.location)
         self.query = query
     }

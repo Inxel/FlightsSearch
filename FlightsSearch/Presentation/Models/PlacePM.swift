@@ -11,6 +11,7 @@ struct PlacePM {
     let city: NSAttributedString
     let airport: NSAttributedString
     let iata: String
+    let cityIata: String?
     let location: LocationPM
 }
 
@@ -29,6 +30,7 @@ extension PlacePM {
         city = cityAttributedText
         airport = airportAttributedText
         iata = place.iata
+        cityIata = place.cityIata
         location = LocationPM(locationModel: place.location)
     }
     
@@ -39,7 +41,9 @@ extension PlacePM {
 extension PlacePM: Equatable {
     
     static func == (lhs: PlacePM, rhs: PlacePM) -> Bool {
-        return lhs.location == rhs.location
+        return lhs.checkIfEqualTo(rhs, byComparing: \.location)
+            || lhs.checkIfEqualTo(rhs, byComparing: \.cityIata)
+            || lhs.checkIfEqualTo(rhs, byComparing: \.iata)
     }
     
 }

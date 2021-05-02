@@ -11,12 +11,14 @@ struct PlaceDTO: Decodable {
     let name: String
     let airportName: String?
     let iata: String
+    let cityIata: String?
     let location: LocationDTO
     
     private enum CodingKeys: String, CodingKey {
         case name
         case airportName = "airport_name"
         case iata
+        case cityIata = "city_iata"
         case location
     }
 }

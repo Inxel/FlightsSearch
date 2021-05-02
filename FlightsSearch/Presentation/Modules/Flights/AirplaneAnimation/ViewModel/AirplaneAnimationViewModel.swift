@@ -12,6 +12,7 @@ protocol AirplaneAnimationViewModelProtocol {
     var departurePlace: PlacePM { get }
     var destinationPlace: PlacePM { get }
     var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>? { get set }
+    func viewDidDisappear()
     func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int)
 }
 
@@ -22,6 +23,8 @@ final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
     private(set) var departurePlace: PlacePM
     private(set) var destinationPlace: PlacePM
     var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>?
+    
+    private var debouncer: Debouncer = Debouncer(seconds: 0.01)
     
     // MARK: - Init
     
@@ -58,6 +61,10 @@ extension AirplaneAnimationViewModel {
 
 extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {
     
+    func viewDidDisappear() {
+        debouncer.cancel()
+    }
+    
     func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int) {
         let step = 5
         let updatedPosition = currentPosition + step
@@ -72,8 +79,8 @@ extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {
         
         planeShouldUpdate?((nextPoint.coordinate, angle))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.updatePlanePosition(flightpathPolyline: flightpathPolyline, currentPosition: updatedPosition)
+        debouncer.debounce { [weak self] in
+            self?.updatePlanePosition(flightpathPolyline: flightpathPolyline, currentPosition: updatedPosition)
         }
     }
     

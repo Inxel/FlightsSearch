@@ -101,8 +101,8 @@ extension FlightsSearchViewController {
         viewModel.sameAirportDidSelect = { [weak self] in
             self?.showAlert(
                 title: "Слишком крутой маршрут",
-                message: "Аэропорты вылета и прилета должны быть разными",
-                cancelButtonTitle: "Ок"
+                message: "Города вылета и прилета должны быть разными",
+                cancelButtonTitle: "Эх, ладно"
             )
         }
     }

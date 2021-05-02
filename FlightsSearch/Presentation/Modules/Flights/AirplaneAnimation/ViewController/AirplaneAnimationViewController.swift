@@ -29,6 +29,11 @@ final class AirplaneAnimationViewController: NiblessViewController {
         configureUI()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
+    }
+    
     // MARK: - Init
     
     init(viewModel: AirplaneAnimationViewModelProtocol) {

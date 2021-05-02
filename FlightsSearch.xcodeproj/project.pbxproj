@@ -28,6 +28,7 @@
 		22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E42263C921C00B486E9 /* AlertShowing.swift */; };
 		22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */; };
 		2291F8B8263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291F8B7263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift */; };
+		2291F8BB263EAB8A000BC504 /* Equatable+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291F8BA263EAB8A000BC504 /* Equatable+KeyPath.swift */; };
 		22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4637F263CA22D000E5261 /* UIImage+Icons.swift */; };
 		22B46388263CA953000E5261 /* Optional+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B46387263CA953000E5261 /* Optional+String.swift */; };
 		22B4638D263DCAE1000E5261 /* AirportAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4638C263DCAE1000E5261 /* AirportAnnotationView.swift */; };
@@ -82,6 +83,7 @@
 		22580E42263C921C00B486E9 /* AlertShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowing.swift; sourceTree = "<group>"; };
 		22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneAnimationViewModel.swift; sourceTree = "<group>"; };
 		2291F8B7263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+CustomInits.swift"; sourceTree = "<group>"; };
+		2291F8BA263EAB8A000BC504 /* Equatable+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equatable+KeyPath.swift"; sourceTree = "<group>"; };
 		22B4637F263CA22D000E5261 /* UIImage+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
 		22B46387263CA953000E5261 /* Optional+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+String.swift"; sourceTree = "<group>"; };
 		22B4638C263DCAE1000E5261 /* AirportAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportAnnotationView.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				22B46387263CA953000E5261 /* Optional+String.swift */,
+				2291F8BA263EAB8A000BC504 /* Equatable+KeyPath.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				22FE556826389138004D36A3 /* KeyboardShowing.swift in Sources */,
 				22B4638D263DCAE1000E5261 /* AirportAnnotationView.swift in Sources */,
 				22580E0C263BF2A700B486E9 /* FlightsCoordinator.swift in Sources */,
+				2291F8BB263EAB8A000BC504 /* Equatable+KeyPath.swift in Sources */,
 				22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */,
 				22580DFA263BEC6C00B486E9 /* NiblessTableViewCell.swift in Sources */,
 				22FE55C3263952B5004D36A3 /* API.swift in Sources */,

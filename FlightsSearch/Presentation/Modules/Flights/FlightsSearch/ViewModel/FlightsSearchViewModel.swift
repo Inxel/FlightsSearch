@@ -34,6 +34,7 @@ final class FlightsSearchViewModel: BaseViewModel<FlightsCoordinator> {
         city: NSAttributedString(string: "Saint Petersburg, Russia"),
         airport: NSAttributedString(string: "Pulkovo Airport"),
         iata: "LED",
+        cityIata: "LED",
         location: LocationPM(latitude: 59.806084, longitude: 30.3083)
     )
     
