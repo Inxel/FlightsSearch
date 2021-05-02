@@ -12,7 +12,6 @@ protocol AirplaneAnimationViewModelProtocol {
     var departurePlace: PlacePM { get }
     var destinationPlace: PlacePM { get }
     var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>? { get set }
-    var mapCenter: LocationPM { get }
     func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int)
 }
 
@@ -23,13 +22,6 @@ final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
     private(set) var departurePlace: PlacePM
     private(set) var destinationPlace: PlacePM
     var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>?
-    
-    var mapCenter: LocationPM {
-        return LocationPM(
-            latitude: (departurePlace.location.latitude + destinationPlace.location.latitude) / 2,
-            longitude: (departurePlace.location.longitude + destinationPlace.location.longitude) / 2
-        )
-    }
     
     // MARK: - Init
     

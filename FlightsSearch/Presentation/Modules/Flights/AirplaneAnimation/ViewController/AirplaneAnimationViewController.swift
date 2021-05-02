@@ -71,15 +71,11 @@ extension AirplaneAnimationViewController {
     private func configureMapView() {
         mapView.delegate = self
         mapView.isRotateEnabled = false
-        mapView.centerCoordinate = CLLocationCoordinate2D(location: viewModel.mapCenter)
         
         let departurePlaceCoordinate = CLLocationCoordinate2D(place: viewModel.departurePlace)
         let destinationPlaceCoordinate = CLLocationCoordinate2D(place: viewModel.destinationPlace)
         
-        let region = MKCoordinateRegion(
-            coordinates: [departurePlaceCoordinate, destinationPlaceCoordinate],
-            spanMultiplier: 2
-        )
+        let region = MKCoordinateRegion(coordinates: [departurePlaceCoordinate, destinationPlaceCoordinate])
         mapView.setRegion(region, animated: false)
         
         mapView.snp.makeConstraints { make in
@@ -136,8 +132,8 @@ extension AirplaneAnimationViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let polylineRender = MKPolylineRenderer(overlay: overlay)
-        polylineRender.lineWidth = 5
-        polylineRender.lineDashPattern = [1, 10]
+        polylineRender.lineWidth = 4
+        polylineRender.lineDashPattern = [1, 8]
         polylineRender.strokeColor = .primaryTintColor
         
         return polylineRender

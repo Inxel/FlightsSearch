@@ -21,8 +21,15 @@ extension MKCoordinateRegion {
             bottomRightCoord.latitude = min(bottomRightCoord.latitude, coordinate.latitude)
         }
 
-        let cent = CLLocationCoordinate2D.init(latitude: topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5, longitude: topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5)
-        let span = MKCoordinateSpan.init(latitudeDelta: abs(topLeftCoord.latitude - bottomRightCoord.latitude) * spanMultiplier, longitudeDelta: abs(bottomRightCoord.longitude - topLeftCoord.longitude) * spanMultiplier)
+        let cent = CLLocationCoordinate2D(
+            latitude: topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5,
+            longitude: topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5
+        )
+        
+        let span = MKCoordinateSpan(
+            latitudeDelta: abs(topLeftCoord.latitude - bottomRightCoord.latitude) * spanMultiplier,
+            longitudeDelta: abs(bottomRightCoord.longitude - topLeftCoord.longitude) * spanMultiplier
+        )
 
         self.init(center: cent, span: span)
     }
