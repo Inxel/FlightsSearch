@@ -13,7 +13,7 @@ protocol AirplaneAnimationViewModelProtocol {
     var destinationPlace: PlacePM { get }
     var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>? { get set }
     func viewDidDisappear()
-    func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int)
+    func updatePlanePosition(flightpathPolylinePoint: MKMultiPoint, currentPosition: Int)
 }
 
 final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
@@ -65,12 +65,12 @@ extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {
         debouncer.cancel()
     }
     
-    func updatePlanePosition(flightpathPolyline: MKPolyline, currentPosition: Int) {
+    func updatePlanePosition(flightpathPolylinePoint: MKMultiPoint, currentPosition: Int) {
         let step = 5
         let updatedPosition = currentPosition + step
-        guard updatedPosition < flightpathPolyline.pointCount else { return }
+        guard updatedPosition < flightpathPolylinePoint.pointCount else { return }
         
-        let polylinePoints = flightpathPolyline.points()
+        let polylinePoints = flightpathPolylinePoint.points()
         let previousPoint = polylinePoints[currentPosition]
         let nextPoint = polylinePoints[updatedPosition]
         
@@ -80,7 +80,7 @@ extension AirplaneAnimationViewModel: AirplaneAnimationViewModelProtocol {
         planeShouldUpdate?((nextPoint.coordinate, angle))
         
         debouncer.debounce { [weak self] in
-            self?.updatePlanePosition(flightpathPolyline: flightpathPolyline, currentPosition: updatedPosition)
+            self?.updatePlanePosition(flightpathPolylinePoint: flightpathPolylinePoint, currentPosition: updatedPosition)
         }
     }
     

@@ -53,7 +53,7 @@ extension AirplaneAnimationViewController {
     }
     
     private func updatePlanePosition() {
-        viewModel.updatePlanePosition(flightpathPolyline: flightpathPolyline, currentPosition: 0)
+        viewModel.updatePlanePosition(flightpathPolylinePoint: flightpathPolyline, currentPosition: 0)
         viewModel.planeShouldUpdate = { [weak self] position in
             guard let self = self else { return }
             self.planeAnnotation.coordinate = position.coordinate
