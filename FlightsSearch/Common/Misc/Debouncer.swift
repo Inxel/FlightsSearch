@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Debouncer {
+final class Debouncer {
     
     // MARK: - Properties
 
@@ -22,15 +22,19 @@ struct Debouncer {
         interval = seconds
     }
     
-    // MARK: - Public
+}
+
+// MARK: - Public API
+
+extension Debouncer {
     
-    mutating func debounce(action: @escaping Handler) {
+    func debounce(action: @escaping Handler) {
         cancel()
         workItem = DispatchWorkItem(block: { action() })
         queue.asyncAfter(deadline: .now() + interval, execute: workItem)
     }
     
-    mutating func cancel() {
+    func cancel() {
         workItem.cancel()
     }
     

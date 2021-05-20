@@ -13,7 +13,7 @@ final class AirplaneAnimationViewController: NiblessViewController {
     
     // MARK: - UI Elements
     
-    private var mapView: MKMapView = MKMapView()
+    private let mapView: MKMapView = MKMapView()
     private var planeAnnotation: PlaneAnnotation = PlaneAnnotation()
     private var flightpathPolyline: MKGeodesicPolyline = MKGeodesicPolyline()
     private var planeAnnotationView: PlaneAnnotationView?

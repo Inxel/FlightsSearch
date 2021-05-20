@@ -8,6 +8,8 @@
 import Foundation
 import MapKit
 
+#warning("Надо выпилить MapKit, перенести соответсвующий код в контроллер и изменить обновление позиции самолета с debouncer на CADisplayLink")
+
 protocol AirplaneAnimationViewModelProtocol {
     var departurePlace: PlacePM { get }
     var destinationPlace: PlacePM { get }
@@ -24,7 +26,7 @@ final class AirplaneAnimationViewModel: BaseViewModel<FlightsCoordinator> {
     private(set) var destinationPlace: PlacePM
     var planeShouldUpdate: TypeHandler<(coordinate: CLLocationCoordinate2D, angle: Double)>?
     
-    private var debouncer: Debouncer = Debouncer(seconds: 0.01)
+    private let debouncer: Debouncer = Debouncer(seconds: 0.01)
     
     // MARK: - Init
     

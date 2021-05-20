@@ -11,7 +11,7 @@ final class FlightsCoordinator: Coordinator {
     
     // MARK: - Properties
     
-    var navigationController: UINavigationController
+    let navigationController: UINavigationController
     
     // MARK: - Init
     
@@ -21,7 +21,7 @@ final class FlightsCoordinator: Coordinator {
     
 }
 
-// MARK: - Public
+// MARK: - Public API
 
 extension FlightsCoordinator {
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Networking: class {
+protocol Networking: AnyObject {
     var apiClient: APIClientProtocol { get }
 }
 

@@ -12,8 +12,8 @@ protocol FlightsSearchViewModelProtocol {
     var itemsDidUpdate: TypeHandler<Bool>? { get set }
     var sameAirportDidSelect: Handler? { get set }
     func didSelectItem(at index: Int)
-    func getAirports(query: String)
-    func setItems(items: [PlacePM])
+    func getItems(by query: String)
+    func clearItems()
 }
 
 final class FlightsSearchViewModel: BaseViewModel<FlightsCoordinator> {
@@ -29,6 +29,8 @@ final class FlightsSearchViewModel: BaseViewModel<FlightsCoordinator> {
     }
     var itemsDidUpdate: TypeHandler<Bool>?
     var sameAirportDidSelect: Handler?
+    
+    private let debouncer: Debouncer = Debouncer(seconds: 0.3)
     
     private var depaturePlace: PlacePM = PlacePM(
         city: NSAttributedString(string: "Saint Petersburg, Russia"),
@@ -47,11 +49,28 @@ final class FlightsSearchViewModel: BaseViewModel<FlightsCoordinator> {
     
 }
 
-// MARK: - Public
+// MARK: - Public API
 
 extension FlightsSearchViewModel {
     
-    func getAirports(query: String) {
+    func getItems(by query: String) {
+        debouncer.debounce { [weak self] in
+            self?.getAirports(by: query)
+        }
+    }
+    
+    func clearItems() {
+        debouncer.cancel()
+        self.items = []
+    }
+    
+}
+
+// MARK: - Private API
+
+extension FlightsSearchViewModel {
+    
+    private func getAirports(by query: String) {
         provider.getPlaces(query: query) { [weak self] result in
             switch result {
             case let .success(places):
@@ -61,10 +80,6 @@ extension FlightsSearchViewModel {
                 print(error)
             }
         }
-    }
-    
-    func setItems(items: [PlacePM]) {
-        self.items = items
     }
     
 }

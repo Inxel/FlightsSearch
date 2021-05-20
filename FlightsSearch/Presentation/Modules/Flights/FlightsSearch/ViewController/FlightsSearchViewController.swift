@@ -40,7 +40,6 @@ final class FlightsSearchViewController: NiblessViewController {
     // MARK: - Properties
     
     private var viewModel: FlightsSearchViewModelProtocol
-    private var debouncer: Debouncer = Debouncer(seconds: 0.3)
     
     private lazy var tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
         target: self,
@@ -226,14 +225,11 @@ extension FlightsSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
-            debouncer.cancel()
-            viewModel.setItems(items: [])
+            viewModel.clearItems()
             return
         }
         
-        debouncer.debounce { [weak self] in
-            self?.viewModel.getAirports(query: searchText)
-        }
+        viewModel.getItems(by: searchText)
     }
     
 }

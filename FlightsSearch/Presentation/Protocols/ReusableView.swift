@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ReusableView: class {}
+protocol ReusableView: AnyObject {}
 
 extension ReusableView where Self: UIResponder {
     static var reuseID: String { return .init(describing: self) }

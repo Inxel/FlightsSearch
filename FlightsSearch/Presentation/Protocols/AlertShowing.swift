@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AlertShowing: class {}
+protocol AlertShowing: AnyObject {}
 
 extension AlertShowing where Self: UIViewController {
     
