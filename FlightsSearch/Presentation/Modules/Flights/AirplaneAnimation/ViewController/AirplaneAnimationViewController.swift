@@ -21,6 +21,8 @@ final class AirplaneAnimationViewController: NiblessViewController {
     // MARK: - Properties
     
     private var viewModel: AirplaneAnimationViewModelProtocol
+    private var displayLink: CADisplayLink?
+    private var currentPlanePosition: Int = 0
     
     // MARK: - Life Cycle
     
@@ -31,7 +33,7 @@ final class AirplaneAnimationViewController: NiblessViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        viewModel.viewDidDisappear()
+        removeDisplayLink()
     }
     
     // MARK: - Init
@@ -52,13 +54,40 @@ extension AirplaneAnimationViewController {
         mapView.addAnnotation(annotation)
     }
     
+    @objc
     private func updatePlanePosition() {
-        viewModel.updatePlanePosition(flightpathPolylinePoint: flightpathPolyline, currentPosition: 0)
-        viewModel.planeShouldUpdate = { [weak self] position in
-            guard let self = self else { return }
-            self.planeAnnotation.coordinate = position.coordinate
-            self.planeAnnotationView?.transform = self.mapView.transform.rotated(by: CGFloat(position.angle))
+        let pointCount = flightpathPolyline.pointCount
+        let step = pointCount / 250  // defined empirically
+        
+        let updatedPosition = currentPlanePosition + step
+        guard updatedPosition < pointCount else {
+            removeDisplayLink()
+            return
         }
+        
+        let polylinePoints = flightpathPolyline.points()
+        let previousPoint = polylinePoints[currentPlanePosition]
+        let nextPoint = polylinePoints[updatedPosition]
+        
+        let direction = viewModel.getDirectionBetween(
+            firstPoint: Point(x: previousPoint.x, y: previousPoint.y),
+            lastPoint: Point(x: nextPoint.x, y: nextPoint.y)
+        )
+        let angle = viewModel.convertDegreesToRadians(degrees: direction)
+        
+        planeAnnotation.coordinate = nextPoint.coordinate
+        planeAnnotationView?.transform = self.mapView.transform.rotated(by: CGFloat(angle))
+        currentPlanePosition = updatedPosition
+    }
+    
+    private func startPlaneAnimation() {
+        displayLink = CADisplayLink(target: self, selector: #selector(updatePlanePosition))
+        displayLink?.add(to: .current, forMode: .common)
+    }
+    
+    private func removeDisplayLink() {
+        displayLink?.isPaused = true
+        displayLink?.invalidate()
     }
     
 }
@@ -106,7 +135,7 @@ extension AirplaneAnimationViewController {
     private func configurePlaneAnnotation() {
         planeAnnotation = PlaneAnnotation()
         mapView.addAnnotation(planeAnnotation)
-        updatePlanePosition()
+        startPlaneAnimation()
     }
     
 }

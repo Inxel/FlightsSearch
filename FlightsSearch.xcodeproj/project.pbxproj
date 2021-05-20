@@ -27,6 +27,7 @@
 		22580E39263C85FC00B486E9 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E38263C85FC00B486E9 /* Debouncer.swift */; };
 		22580E43263C921C00B486E9 /* AlertShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E42263C921C00B486E9 /* AlertShowing.swift */; };
 		22580E49263C98D100B486E9 /* AirplaneAnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */; };
+		2282170726561BE5000C5D9D /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2282170626561BE5000C5D9D /* Point.swift */; };
 		2291F8B8263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291F8B7263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift */; };
 		2291F8BB263EAB8A000BC504 /* Equatable+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291F8BA263EAB8A000BC504 /* Equatable+KeyPath.swift */; };
 		22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4637F263CA22D000E5261 /* UIImage+Icons.swift */; };
@@ -82,6 +83,7 @@
 		22580E38263C85FC00B486E9 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		22580E42263C921C00B486E9 /* AlertShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowing.swift; sourceTree = "<group>"; };
 		22580E48263C98D100B486E9 /* AirplaneAnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneAnimationViewModel.swift; sourceTree = "<group>"; };
+		2282170626561BE5000C5D9D /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2291F8B7263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+CustomInits.swift"; sourceTree = "<group>"; };
 		2291F8BA263EAB8A000BC504 /* Equatable+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Equatable+KeyPath.swift"; sourceTree = "<group>"; };
 		22B4637F263CA22D000E5261 /* UIImage+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				2237DB9B2639A03C0077AE4E /* PlacePM.swift */,
 				2237DBA82639A5CD0077AE4E /* LocationPM.swift */,
+				2282170626561BE5000C5D9D /* Point.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				2237DB89263990C70077AE4E /* UITableView+Registration.swift in Sources */,
 				22580DF7263BE27C00B486E9 /* APIError.swift in Sources */,
 				22B46380263CA22D000E5261 /* UIImage+Icons.swift in Sources */,
+				2282170726561BE5000C5D9D /* Point.swift in Sources */,
 				22B46399263DD7A8000E5261 /* AirportPointAnnotation.swift in Sources */,
 				2237DBA92639A5CD0077AE4E /* LocationPM.swift in Sources */,
 				2291F8B8263E8A6C000BC504 /* MKCoordinateRegion+CustomInits.swift in Sources */,
