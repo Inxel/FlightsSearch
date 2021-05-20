@@ -33,9 +33,9 @@ final class FlightsSearchViewController: NiblessViewController {
         
         return tableView
     }()
-    private var backgroundView: UIView = UIView()
-    private var descriptionLabel: UILabel = UILabel()
-    private var searchBar: UISearchBar = UISearchBar()
+    private let backgroundView: UIView = UIView()
+    private let descriptionLabel: UILabel = UILabel()
+    private let searchBar: UISearchBar = UISearchBar()
     
     // MARK: - Properties
     
