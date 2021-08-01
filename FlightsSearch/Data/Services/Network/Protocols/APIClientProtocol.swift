@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol `APIClientProtocol` {
+protocol APIClientProtocol {
     func send<T: APIRequest>(_ request: T, destinationQueue: OperationQueue, completion: @escaping ResultHandler<T.Response>)
     func cancelAllTasks()
 }

@@ -76,7 +76,7 @@ extension AirplaneAnimationViewController {
         let angle = viewModel.convertDegreesToRadians(degrees: direction)
         
         planeAnnotation.coordinate = nextPoint.coordinate
-        planeAnnotationView?.transform = self.mapView.transform.rotated(by: CGFloat(angle))
+        planeAnnotationView?.transform = mapView.transform.rotated(by: CGFloat(angle))
         currentPlanePosition = updatedPosition
     }
     
