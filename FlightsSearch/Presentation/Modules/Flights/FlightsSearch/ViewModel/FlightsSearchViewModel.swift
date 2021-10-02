@@ -71,15 +71,22 @@ extension FlightsSearchViewModel {
 extension FlightsSearchViewModel {
     
     private func getAirports(by query: String) {
-        provider.getPlaces(query: query) { [weak self] result in
+        Task {
+            let result = await provider.getPlaces(query: query)
+
             switch result {
-            case let .success(places):
-                let items = places.map(PlacePM.init)
-                self?.items = items
-            case let .failure(error):
-                print(error)
+                case let .success(places):
+                    let items = places.map(PlacePM.init)
+                    await updateItems(with: items)
+                case let .failure(error):
+                    print(error)
             }
         }
+    }
+
+    @MainActor
+    private func updateItems(with items: [PlacePM]) {
+        self.items = items
     }
     
 }

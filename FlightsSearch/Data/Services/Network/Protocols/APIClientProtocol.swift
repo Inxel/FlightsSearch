@@ -8,6 +8,6 @@
 import Foundation
 
 protocol APIClientProtocol {
-    func send<T: APIRequest>(_ request: T, destinationQueue: OperationQueue, completion: @escaping ResultHandler<T.Response>)
+    func send<T: APIRequest>(_ apiRequest: T) async -> Result<T.Response, Error>
     func cancelAllTasks()
 }

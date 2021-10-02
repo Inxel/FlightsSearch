@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FligthsSearchProviding {
-    func getPlaces(query: String, completion: @escaping ResultHandler<[PlaceModel]>)
+    func getPlaces(query: String) async -> APIResult<[PlaceModel]>
 }

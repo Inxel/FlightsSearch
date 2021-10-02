@@ -25,69 +25,36 @@ final class APIClient: APIClientProtocol {
 
 extension APIClient {
     
-    func send<T>(
-        _ apiRequest: T,
-        destinationQueue: OperationQueue = .main,
-        completion: @escaping ResultHandler<T.Response>
-    ) where T: APIRequest {
+    func send<T: APIRequest>(
+        _ apiRequest: T
+    ) async -> Result<T.Response, Error> {
         do {
             let url = try makeURL(for: apiRequest.urlString)
-            
-            try makeURLRequest(for: url, requestModel: apiRequest) { request in
-                
-                self.session.dataTask(with: request) { [weak self] data, response, error in
-                    /* Checking if internet is connected ---------------------------------- */
-                    if (error as? URLError)?.code == .notConnectedToInternet {
-                        destinationQueue.addOperation {
-                            completion(.failure(.notConnectedToInternet))
-                        }
-                        return
-                    }
-                    /* -------------------------------------------------------------------- */
-                    
-                    
-                    /* Checking if request has timed-out----------------------------------- */
-                    if (error as? URLError)?.code == .timedOut {
-                        destinationQueue.addOperation {
-                            completion(.failure(.timeOut))
-                        }
-                        return
-                    }
-                    /* -------------------------------------------------------------------- */
-                    
-                    
-                    /* Checking validity of http response --------------------------------- */
-                    guard let httpResponse = response as? HTTPURLResponse else {
-                        destinationQueue.addOperation{
-                            completion(.failure(.somethingWentWrong))
-                        }
-                        return
-                    }
-                    /* -------------------------------------------------------------------- */
-                    
-                    
-                    /* Checking HTTP status code ------------------------------------------ */
-                    switch httpResponse.statusCode {
-                    case 200...299:
-                            self?.decodeResponse(from: data, completion: completion)
-                        
-                    case 500...599:
-                        destinationQueue.addOperation {
-                            completion(.failure(.serverIsNonResponsive))
-                        }
-                        
-                    default:
-                        destinationQueue.addOperation {
-                            completion(.failure(.somethingWentWrong))
-                        }
-                    }
-                    /* -------------------------------------------------------------------- */
-                }.resume()
+            let urlRequest = try makeURLRequest(for: url, requestModel: apiRequest)
+
+            let (data, response) = try await session.data(for: urlRequest)
+
+            /* Checking validity of http response --------------------------------- */
+            guard let httpResponse = response as? HTTPURLResponse else {
+                return .failure(APIError.somethingWentWrong)
+            }
+            /* -------------------------------------------------------------------- */
+
+
+            /* Checking HTTP status code ------------------------------------------ */
+            switch httpResponse.statusCode {
+            case 200...299:
+                let parsedData = try JSONDecoder().decode(T.Response.self, from: data)
+                    return .success(parsedData)
+
+            case 500...599:
+                return .failure(APIError.serverIsNonResponsive)
+
+            default:
+                return .failure(APIError.somethingWentWrong)
             }
         } catch {
-            destinationQueue.addOperation {
-                completion(.failure(.somethingWentWrong))
-            }
+            return .failure(error)
         }
     }
     
@@ -110,7 +77,7 @@ extension APIClient {
         return url
     }
     
-    private func makeURLRequest<T: APIRequest>(for url: URL, requestModel: T, completion: @escaping TypeHandler<URLRequest>) throws {
+    private func makeURLRequest<T: APIRequest>(for url: URL, requestModel: T) throws -> URLRequest {
         var request = URLRequest(url: url)
         let httpMethod = requestModel.httpMethod
         request.httpMethod = httpMethod.rawValue
@@ -123,7 +90,7 @@ extension APIClient {
             try addEncodedBody(to: &request, with: requestModel)
         }
         
-        completion(request)
+        return request
     }
     
     private func addEncodedBody<T: APIRequest>(to urlRequest: inout URLRequest, with apiRequest: T) throws {
@@ -135,22 +102,5 @@ extension APIClient {
         urlRequest.httpBody = body
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
     }
-    
-    private func decodeResponse<T: Decodable>(
-        from data: Data?,
-        destinationQueue: OperationQueue = .main,
-        completion: @escaping ResultHandler<T>
-    ) {
-        destinationQueue.addOperation {
-            if
-                let data = data,
-                let result = try? JSONDecoder().decode(T.self, from: data)
-            {
-                completion(.success(result))
-            } else {
-                completion(.failure(.invalidData))
-            }
-        }
-    }
-    
+
 }

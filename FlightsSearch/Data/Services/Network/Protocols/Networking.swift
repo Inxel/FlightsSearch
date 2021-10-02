@@ -15,12 +15,10 @@ protocol Networking: AnyObject {
 
 extension Networking {
     
-    func send<T>(
-        _ apiRequest: T,
-        destinationQueue: OperationQueue = .main,
-        completion: @escaping ResultHandler<T.Response>
-    ) where T: APIRequest {
-        apiClient.send(apiRequest, destinationQueue: destinationQueue, completion: completion)
+    func send<T: APIRequest>(
+        _ apiRequest: T
+    ) async -> APIResult<T.Response> {
+        return await apiClient.send(apiRequest)
     }
     
 }

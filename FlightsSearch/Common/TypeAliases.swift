@@ -9,4 +9,4 @@ import Foundation
 
 typealias Handler = () -> Void
 typealias TypeHandler<T> = (T) -> Void
-typealias ResultHandler<T> = (Result<T, APIError>) -> Void
+typealias APIResult<T> = Result<T, Error>
